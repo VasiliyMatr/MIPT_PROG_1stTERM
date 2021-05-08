@@ -1,0 +1,71 @@
+solveFact    PROC
+
+            PUSH  100000
+            POP   R02
+            PUSH  R02
+            POP   
+
+            IN    R01
+w0000 :
+            PUSH  R02
+            PUSH  0
+            CMPS  
+            JE    e0000
+            PUSHA 
+            MOV   R00 R01
+            CALL  fact
+            POPA  
+            PUSH  R07
+            POP   R00
+            PUSH  R00
+            POP   
+
+            PUSH  R02
+            PUSH  1
+            SUBS
+            POP   R02
+            PUSH  R02
+            POP   
+            JMP   w0000
+e0000 :
+
+            OUT   R00
+            PUSH  R00
+            EXIT  
+
+ENDP
+
+fact    PROC
+
+            PUSH  1
+            POP   R01
+            PUSH  R01
+            POP   
+
+w0001 :
+            PUSH  R00
+            PUSH  0
+            CMPS  
+            JE    e0001
+            PUSH  R01
+            PUSH  R00
+            MULS
+            POP   R01
+            PUSH  R01
+            POP   
+
+            PUSH  R00
+            PUSH  1
+            SUBS
+            POP   R00
+            PUSH  R00
+            POP   
+            JMP   w0001
+e0001 :
+
+            PUSH  R01
+            POP   R07
+            RET   
+
+ENDP
+

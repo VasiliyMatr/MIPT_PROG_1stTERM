@@ -1,0 +1,35 @@
+solveFact ( )
+{
+    forEach a
+    forEach b
+    forEach c |-->
+
+    c = 100000 =>
+
+    exists b |-->
+
+    induction (c)
+    {
+        a = fact (b) =>
+        c = c - 1 =>
+    }
+
+    consider a =>
+    answer a =>
+}
+
+fact ( limit )
+{
+    forEach value
+
+    value = 1 =>
+
+    induction (limit)
+    {
+        value = value * limit =>
+
+        limit = limit - 1 =>
+    }
+
+    answer value =>
+}
